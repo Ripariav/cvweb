@@ -1,0 +1,140 @@
+<!-- base.html -->
+{% load static %}
+{% load tailwind_tags %}
+{% tailwind_css %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Daniel Rivera{% endblock %}</title>
+
+	{% comment %} text {% endcomment %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+	<!-- Favicon -->
+    <link rel="icon" href="{% static 'img/logo.svg' %}" type="image/x-icon">
+    
+</head>
+<body class="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-slate-800 via-electric-violet-800 to-slate-400 scroll-smooth leading-normal tracking-normal">
+    <div class="container mx-auto">
+		<div class="flex items-center justify-center h-screen flex-row" id="container">
+			<div class="bg-slate-100 z-10 rounded-lg shadow-[-24px_-24px_0px_1px_rgba(91,_69,_96,_0.48),_4px_0_10px_rgba(0,0,0,0.3)] min-w-[30rem]" id="profile-card" >
+			  <div id="img-profile-card" class="relative rounded-t-lg min-h-96 bg-cover bg-center " style="background-image: url({% static 'img/photo-profile.png' %})">
+			  </div>
+			  <svg class=" -translate-y-20 z-10 min-w-[30rem] " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f1f5f9" fill-opacity="1" d="M0,160L720,224L1440,128L1440,320L720,320L0,320Z"></path></svg>
+			  <div id="info-profile-card" class="flex flex-col justify-center gap-y-2 ">
+				<div class="flex flex-col justify-center items-center ">
+					<img src="{% static "img/logo.svg" %}" alt="logo" class="bg-slate-100 shadow-lg rounded-full w-28 h-28 z-20 absolute -translate-y-28">
+				</div>
+				<h1 class="text-slate-800 justify-center flex text-4xl font-bold">Daniel Rivera</h1>
+				<h2 id="typed-text" class="text-electric-violet-700 justify-center flex text-xl font-light min-h-8"></h2>
+				<div>
+				  <ul id="icons-profile-card"class=" flex flex-row gap-2 m-4 items-center justify-center">
+					<li id="github-icon">
+					  <div class="group relative">
+						<a href='https://github.com/Ripariav'  target="_blank" rel="noopener noreferrer">
+						  <svg class="w-6 h-6 text-gray-800 hover:scale-125 cursor-pointer hover:text-purple-400 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+							  <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+							</svg>
+							
+						</a>
+						<span
+						  class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100"
+						  >GitHub<span> </span
+						></span>
+					  </div>
+					</li>
+					<li id="x-icon">
+					  <div class="group relative">
+						  <a>
+							<svg class="w-6 h-6 text-gray-800 hover:scale-125 cursor-pointer hover:text-purple-400 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+							  <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
+							</svg>
+							
+							  
+						  </a>
+						  <span
+							class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100"
+							>X - Twitter<span> </span
+						  ></span>
+					</li>
+					<li id="stackoverflow-icon">
+					  <div class="group relative">
+						  <a>
+							  <svg class="w-6 h-6 text-gray-800 hover:scale-125 cursor-pointer hover:text-purple-400 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+								  <path d="M17 20v-5h2v6.988H3V15h1.98v5H17Z"/>
+								  <path d="m6.84 14.522 8.73 1.825.369-1.755-8.73-1.825-.369 1.755Zm1.155-4.323 8.083 3.764.739-1.617-8.083-3.787-.739 1.64Zm3.372-5.481L10.235 6.08l6.859 5.704 1.132-1.362-6.859-5.704ZM15.57 17H6.655v2h8.915v-2ZM12.861 3.111l6.193 6.415 1.414-1.415-6.43-6.177-1.177 1.177Z"/>
+								</svg>
+								
+							  
+						  </a>
+						  <span
+							class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100"
+							>Stack Overflow<span> </span
+						  ></span>
+					</li>
+					<li id="linkedin-icon">
+					  <div class="group relative">
+						  <a>
+							  <svg class="w-6 h-6 text-gray-800 hover:scale-125 cursor-pointer hover:text-purple-400 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+								  <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+								  <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+								</svg>
+								
+							  
+						  </a>
+						  <span
+							class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100"
+							>LinkedIn<span> </span
+						  ></span>
+					</li>
+					<li id="wha-icon">
+					  <div class="group relative">
+						  <a>
+							  <svg class="w-6 h-6 text-gray-800 hover:scale-125 cursor-pointer hover:text-purple-400 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+								  <path fill="currentColor" fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/>
+								  <path fill="currentColor" d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"/>
+								</svg>
+								
+							  
+						  </a>
+						  <span
+							class="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100"
+							>What'sApp<span> </span
+						  ></span>
+					</li>
+				  </ul>
+				</div>
+				<div id="buttons-profile-card" class="justify-center flex mt-6">
+				  <button id="down-cv-profile-card" class="px-6 border-r py-4 border-t-2 w-full rounded-bl-lg border-electric-violet-400 hover:bg-electric-violet-400 hover:text-white transition-all">Download Cv</button>
+				  <a href="#contact" id="contact-profile-card" class="px-6 border-l py-4 border-t-2 w-full rounded-br-lg justify-center items-center flex cursor-pointer border-electric-violet-400 hover:bg-electric-violet-400 hover:text-white transition-all">Contact Me</a>
+				</div>
+			  </div>
+			</div>
+
+			<!-- Navbar -->
+			<nav class="py-4 z-10 absolute top-60 translate-x-56 w-[400px] md:block sm:hidden">
+				<div class="container mx-auto flex justify-center items-center px-6 md:px-12 lg:px-24 ">
+				<div class="space-x-6 bg-electric-violet-400 text-white p-4 rounded-lg absolute -translate-y-40 scroll-smooth shadow-xl">
+					<a href="#about-me" class="text-lg  hover:text-black transition-all ">About</a>
+					<a href="#experience" class="text-lg  hover:text-black transition-all ">Experience</a>
+					<a href="#education" class="text-lg  hover:text-black transition-all ">Education</a>
+					<a href="#contact" class="text-lg  hover:text-black transition-all ">Contact</a>
+				</div>
+			</nav>
+
+			<div class="w-[800px] h-[650px] bg-slate-100 overflow-auto rounded-lg   -translate-x-2  shadow-2xl">
+
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>    
+    </div>
+	{% block scripts %}
+	{% endblock scripts %}
+</body>
+</html>
