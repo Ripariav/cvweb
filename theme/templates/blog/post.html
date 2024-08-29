@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load static %} {% load tailwind_tags %} 
+{% block title %} Blog - {{post.titulo}} {% endblock %} 
+{% block content %}
+
+<div class="flex items-center justify-center h-screen flex-row" id="container">
+    <div class="md:w-[1250px] md:h-[750px]  bg-slate-100 overflow-auto rounded-lg  -translate-x-2  shadow-2xl scrollreveal" data-sr-delay="250" data-sr-origin="bottom">
+        <div class="flex flex-col items-center justify-center ">
+            <img src="{{post.imagen_banner}}" alt="">
+            <div class="flex flex-col flex-wrap max-w-[900px] justify-center items-center pt-20">
+                <h1 class="text-3xl font-bold">{{post.titulo}}</h1>
+                <div class="flex items-center">
+                    <div class="h-1flex-1 bg-black"></div>
+                    <span class="shrink-0 px-6 text-slate-600">{{post.categoria}}</span>
+                    <div class="h-1 flex-1 bg-black"></div>
+                </div>
+                <p class="leading-relaxed mt-5">{{post.contenido|capfirst}}</p>
+            </div>
+            <div class="my-10 max-w-[900px]">{{post.contenido_embebido}}</div>
+            <div class=" flex flex-row flex-wrap pb-20 pt-10 gap-x-4 items-end justify-end">
+                <h3 class="text-sm font-bold">Fecha De Publicación:</h3>
+                <p class="leading-relaxed text-sm text-slate-600">{{post.fecha_creacion}}</p>
+                <h3 class="text-sm font-bold">Ultima Actualización:</h3>
+                <p class="leading-relaxed text-sm text-slate-600">{{post.fecha_actualizacion}}</p>
+            </div>
+        </div>
+
+
+        
+    </div>
+    <div class="absolute bottom-8 right-52 cursor-pointer hover:scale-110 transition-all group   md:block sm:hidden ">
+        <a href="{% url "blog" %}" class="scrollreveal"  data-sr-delay="850" >
+            <svg class="w-16 h-16 rounded-full bg-electric-violet-200 flex items-center justify-center text-electric-violet-400 transition-all hover:bg-electric-violet-400 hover:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 6v12m8-12v12l-8-6 8-6Z"/>
+              </svg>
+              <span
+              class="absolute -top-12 left-[50%] -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100"
+              >Back </span>
+        </a>       
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="{% static 'js/typed.js' %}"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="{% static "js/scrollreveal.js" %}"></script>
+{% endblock scripts %}
+
+

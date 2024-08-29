@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [  # Vista principal para la app main
+urlpatterns = [  
+    path('', views.projectsview, name='projects')
 ]
