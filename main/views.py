@@ -38,3 +38,6 @@ def contact(request):
         messages.success(request, 'Se ha enviado tu correo.')
         return redirect('home')
 
+
+def linksview(request):
+    return render(request, 'main/linktree.html')

@@ -17,14 +17,17 @@
 
 	{% comment %} icons {% endcomment %}
 	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
           
 
 	<!-- Favicon -->
     <link rel="icon" href="{% static 'img/logo.svg' %}" type="image/x-icon">
-    
+
 </head>
-<body class="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-slate-800 via-electric-violet-800 to-slate-400 scroll-smooth leading-normal tracking-normal">
-    <div class="container mx-auto">
+<body class=" scroll-smooth leading-normal tracking-normal bg-gradient-to-t from-[#565d6a] to-[#94a1b7]">
+	
+    <div class="container md:mx-auto sm:mx-0">
 		{% block content %}
 		{% endblock content %} 
     </div>
@@ -32,3 +35,6 @@
 	{% endblock scripts %}
 </body>
 </html>
+
+
+
