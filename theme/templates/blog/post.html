@@ -2,13 +2,15 @@
 {% block title %} Blog - {{post.titulo}} {% endblock %} 
 {% block content %}
 
-<div class="flex items-center justify-center h-screen flex-row" id="container">
-    <div class="md:w-[1250px] md:h-[750px]  bg-slate-800 overflow-auto rounded-lg  -translate-x-2  shadow-2xl scrollreveal" data-sr-delay="250" data-sr-origin="bottom">
+<div class="flex items-center justify-center md:h-screen flex-row" id="container">
+    <div class="md:w-[1250px] md:h-[750px] w-full bg-slate-800 md:overflow-auto md:rounded-lg  md:-translate-x-2  shadow-2xl scrollreveal" data-sr-delay="250" data-sr-origin="bottom">
         <div class="flex flex-col items-center justify-center ">
             <div alt="" class="w-full h-96 bg-cover shadow-lg bg-center " style="background-image: url({{post.imagen_banner.url}})">
             </div>
-
-            <div class="flex flex-col flex-wrap max-w-[900px] justify-center items-center pt-10">
+            <div class="mt-12 text-center md:hidden">
+                <a href="{% url "blog" %}" class="px-6 py-2 bg-electric-violet-500 text-white font-bold rounded-md hover:bg-electric-violet-600">Back</a>
+            </div>
+            <div class="flex flex-col flex-wrap md:max-w-[900px] max-w-[450px] justify-center items-center pt-10">
                 <h1 class="text-3xl font-bold text-slate-200">{{post.titulo}}</h1>
                 <div class="flex items-center w-full pt-5">
                     <div class="h-[2px] flex-1 bg-white w-full"></div>
@@ -17,8 +19,8 @@
                 </div>
                 <p class="leading-relaxed mt-5 text-slate-300">{{post.contenido|capfirst|safe|linebreaksbr}}</p>
             </div>
-            <div class="my-10 max-w-[900px] flex flex-col items-center justify-center gap-y-1 text-slate-200">{{post.contenido_embebido|safe|linebreaksbr}}</div>
-            <div class=" flex flex-row flex-wrap pb-20 pt-10 gap-x-4 items-end justify-end">
+            <div class="my-10 md:max-w-[900px] max-w-[450px] flex flex-col items-center justify-center gap-y-1 text-slate-200">{{post.contenido_embebido|safe|linebreaksbr}}</div>
+            <div class=" flex md:flex-row flex-wrap pb-20 pt-10 gap-x-4 items-end justify-end flex-col ">
                 <h3 class="text-sm font-bold text-slate-200">Fecha De Publicación:</h3>
                 <p class="leading-relaxed text-sm text-slate-400">{{post.fecha_creacion}}</p>
                 <h3 class="text-sm font-bold text-slate-200">Ultima Actualización:</h3>
@@ -29,7 +31,7 @@
 
         
     </div>
-    <div class="absolute bottom-8 right-52 cursor-pointer hover:scale-110 transition-all group   md:block sm:hidden ">
+    <div class="absolute bottom-8 right-52 cursor-pointer hover:scale-110 transition-all group   md:block hidden ">
         <a href="{% url "blog" %}" class="scrollreveal"  data-sr-delay="850" >
             <svg class="w-16 h-16 rounded-full bg-electric-violet-200 flex items-center justify-center text-electric-violet-400 transition-all hover:bg-electric-violet-400 hover:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 6v12m8-12v12l-8-6 8-6Z"/>

@@ -2,7 +2,7 @@
 {% block title %} Daniel Rivera - Ripariav {% endblock %} 
 {% block content %}
 <div class="md:flex items-center justify-center h-screen md:flex-row flex-col " id="container">
-  <div class="bg-slate-800 text-white z-10 rounded-lg shadow-[-24px_-24px_0px_1px_rgba(162,_128,_255,_1),_4px_0_10px_rgba(0,0,0,0.3)] min-w-[30rem] scrollreveal" data-sr-delay="200" data-sr-origin="bottom" id="profile-card" >
+  <div class="bg-slate-800 text-white z-10 sm:rounded-lg shadow-[-24px_-24px_0px_1px_rgba(162,_128,_255,_1),_4px_0_10px_rgba(0,0,0,0.3)] min-w-[30rem] scrollreveal" data-sr-delay="200" data-sr-origin="bottom" id="profile-card" >
     <div id="img-profile-card" class="relative rounded-t-lg min-h-96 bg-cover bg-center " style="background-image: url({% static 'img/photo-profile.png' %})">
     </div>
     <svg class=" -translate-y-20 z-10 min-w-[30rem] " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1e293b" fill-opacity="1" d="M0,160L720,224L1440,128L1440,320L720,320L0,320Z"></path></svg>
@@ -97,7 +97,7 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="py-4 z-10 absolute top-52 w-0 md:block sm:hidden scrollreveal" data-sr-delay="1800" data-sr-origin="bottom">
+  <nav class="py-4 z-10 absolute top-52 w-0 md:block md:absolute hidden scrollreveal" data-sr-delay="1800" data-sr-origin="bottom">
     <div class="space-x-6 bg-electric-violet-400 text-white p-4 rounded-lg absolute -translate-y-40 -translate-x-12 scroll-smooth flex flex-row justify-center items-center shadow-xl w-[550px]">
       <a href="#about-me" class="text-md  hover:text-black transition-all ">About</a>
       <a href="#experience" class="text-md  hover:text-black transition-all ">Experience</a>
@@ -110,7 +110,7 @@
   </nav>
   
 {% comment %} ALL INFO {% endcomment %}
-  <div class="w-[850px] h-[650px] bg-slate-800 overflow-auto rounded-lg   -translate-x-2  shadow-2xl scrollreveal" data-sr-delay="800" data-sr-origin="left">
+  <div class=" w-full  md:w-[850px] md:h-[650px] bg-slate-800 md:overflow-auto md:rounded-lg  md:-translate-x-2  shadow-2xl scrollreveal" data-sr-delay="800" data-sr-origin="left">
     <div class="flex flex-col bg-slate-800 text-slate-200 scroll-smooth scrollreveal" data-sr-delay="1200" data-sr-origin="left">
       <section id="about-me" class="py-16 ">
               <div class="container mx-auto flex flex-col w-11/12 items-center px-6 md:px-12 lg:px-24">
@@ -338,7 +338,7 @@
             <section id="blog" class="py-6 ">
               <div class="container  py-10 ">
                 <h2 class="text-4xl font-bold text-slate-200 mb-12 text-center">Blog 🗒️</h2>
-                <div class="flex flex-wrap items-center justify-center ">
+                <div class="flex flex-wrap flex-col md:flex-row items-center justify-center ">
                   {% for post in posts|slice:':2' %}
                   
                   <div class="p-4 max-w-96 ml-2">
@@ -360,7 +360,7 @@
 
                   {% endfor %}
                   <div class="mt-12 text-center">
-                    <a href="/blog" class="px-6 py-2 bg-electric-violet-500 text-white font-bold rounded-md hover:bg-electric-violet-600">View more posts</a>
+                    <a href="{% url "blog" %}" class="px-6 py-2 bg-electric-violet-500 text-white font-bold rounded-md hover:bg-electric-violet-600">View more posts</a>
                   </div>
                 </div>
               </div>
