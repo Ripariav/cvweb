@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #whitenoise settigns
-    'whitenoise.runserver_nostatic'
     # Terceros...
     'tailwind',
     'theme',
