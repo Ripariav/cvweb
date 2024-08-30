@@ -1,1 +1,1 @@
-web: python manage.py collectsatic && gunicorn core.wsgi
+web: gunicorn core.wsgi
