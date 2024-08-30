@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-@8ad(qnhgtw7bksws&)8%*1!=)5$4t5hl=1q482hbd(5y7rm$r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','https://web-production-36b8.up.railway.app']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic'
     # Terceros...
     'tailwind',
     'theme',
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = DATABASES = {
-    'default': dj_database_url.config(default='postgresql://postgres:YTVLcwqojqCMymYCitUivWEdMYtkpWJL@meticulous-empathy.railway.internal:5432/railway', conn_max_age=600)
+    'default': dj_database_url.config(default='postgresql://postgres:FbqyslnIuFICpLAlCZrqUizcoURSGNFt@meticulous-empathy.railway.internal:5432/railway', conn_max_age=600)
 }
 
 
