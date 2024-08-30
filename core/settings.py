@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #whitenoise settigns
+    'whitenoise.runserver_nostatic'
     # Terceros...
     'tailwind',
     'theme',
@@ -47,7 +49,7 @@ INSTALLED_APPS = [
     'main',
     'blog',
     'projects',
-    'whitenoise'
+    
 ]
 
 MIDDLEWARE = [
@@ -167,3 +169,4 @@ TAILWIND_APP_NAME = 'theme'
 
 #WHITE NOISE SETTIGNS
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
