@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@8ad(qnhgtw7bksws&)8%*1!=)5$4t5hl=1q482hbd(5y7rm$r'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,8 +95,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-    
 }
+
 
 
 # Password validation
@@ -133,16 +133,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [ 
     BASE_DIR / "theme/static",  # Carpeta de archivos estáticos generada por Tailwind
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'theme/static')]
 
 # Otras configuraciones...
@@ -161,8 +157,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'danielriveravelasquez@gmail.com'
-EMAIL_HOST_PASSWORD = 'yvuaikyhvufyfmes'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
 
