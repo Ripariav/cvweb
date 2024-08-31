@@ -11,23 +11,16 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import os
 import dj_database_url
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'czBgPQHGCQMKtghGAmYaInkBlXrKMpXz',
-        'HOST': 'meticulous-empathy-09c32df7.railway.internal',
-        'PORT': '5432',
-    }
-}
-
 
 
 # Quick-start development settings - unsuitable for production
@@ -51,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     # Terceros...
     'tailwind',
     'theme',
@@ -93,6 +87,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
 
 
 # Password validation
@@ -153,6 +156,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
