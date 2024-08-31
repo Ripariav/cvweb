@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,7 +91,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgresql://postgres:FbqyslnIuFICpLAlCZrqUizcoURSGNFt@meticulous-empathy.railway.internal:5432/railway')
+        default=os.getenv('DATABASE_URL')
     )
 }
 
@@ -170,3 +173,4 @@ TAILWIND_APP_NAME = 'theme'
 #WHITE NOISE SETTIGNS
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+CSRF_TRUDSTED_ORIGINS = ['https://web-production-36b8.up.railway.app', 'https://*']
