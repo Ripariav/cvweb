@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','web-production-36b8.up.railway.app','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','https://web-production-e888.up.railway.app','127.0.0.1']
 
 
 # Application definition
